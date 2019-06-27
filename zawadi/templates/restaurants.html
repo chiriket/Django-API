@@ -1,1 +1,9 @@
-test {{ Food }}
+  
+  {% for i in search %}
+  <ul>
+    <li> {{ i.name }}-{{ i.price}} </li>
+  </ul>
+  
+ 
+
+  {% endfor %}

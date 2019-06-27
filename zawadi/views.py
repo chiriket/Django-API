@@ -33,13 +33,13 @@ def profile(request):
 
 
 def restaurant(request):
-   url = 'https://sleepy-garden-51801.herokuapp.com/json/allItems'
+   url = 'https://sleepy-garden-51801.herokuapp.com/json/s/Chicken%20Inn'
    response = requests.get(url)
 
    menu = response.json()
     
    return render(request, 'restaurants.html',{
-       'Food' : menu['Food'],
+       'search': menu['searchedByName']
      
    })
 
