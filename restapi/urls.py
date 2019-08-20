@@ -20,4 +20,3 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'',include('zawadi.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-]

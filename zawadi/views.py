@@ -2,21 +2,21 @@ from django.shortcuts import render
 from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 import datetime as dt
-from .models import Profile, Restaurant
+from .models import Profile,
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.db import models
 from django.http import Http404
-from .forms import RestaurantForm,ProfileForm,PostForm
+from .forms import ProfileForm
 from django.http import JsonResponse
 import requests
 
 # Create your views here.
 def index(request):
     title = 'Home'
-    restaurant = Restaurant.objects.all()
+    restaurant = Bank.objects.all()
    
-    return render(request, 'index.html', {'title':title  ,'restaurant':restaurant })
+    return render(request, 'index.html', {'title':title  ,'bank':bank })
 
 def profile(request):
     current_user = request.user
