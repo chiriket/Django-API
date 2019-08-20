@@ -1,1 +1,1 @@
-web: gunicorn zawadi.wsgi --log-file -
+web: gunicorn restapi.wsgi --log-file -

@@ -44,14 +44,14 @@ def bank(request):
    })
 
 
-def get_menu():
+def get_transcriptio():
    '''
-   Fetches and returns random quotes from api
+   Fetches and returns transcription from api
    '''
 
-   url = 'https://sleepy-garden-51801.herokuapp.com/json/allItems'
+   url = 'http://127.0.0.1:8000/api/merch/'
    response = requests.get(url)
 
-   menu = response.json()
+   transcription = response.json()
 
-   return menu
+   return transcription
