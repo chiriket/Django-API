@@ -32,32 +32,17 @@ def profile(request):
     return render(request, 'profile/profile.html', {'title':title, 'profile':profile, 'profile_details':profile_details})
 
 
-def restaurant(request):
-   url = 'https://sleepy-garden-51801.herokuapp.com/json/s/Chicken%20Inn'
+def bank(request):
+   url = 'http://127.0.0.1:8000/api/merch/'
    response = requests.get(url)
 
    menu = response.json()
     
-   return render(request, 'restaurants.html',{
+   return render(request, 'bank.html',{
        'search': menu['searchedByName']
      
    })
 
-@login_required(login_url='/accounts/login/')
-def new_restaurant(request):
-    current_user = request.user
-    
-    if request.method == 'POST':
-        form = RestaurantForm(request.POST, request.FILES)
-        if form.is_valid():
-            restaurant = form.save(commit=False)
-            restaurant.user = current_user
-            restaurant.profile = profile
-            restaurant.save()
-        return redirect('index')
-    else:
-        form = RestaurantForm()
-    return render(request, 'new_restaurant.html', {"form": form})
 
 def get_menu():
    '''
